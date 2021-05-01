@@ -38,3 +38,12 @@ However, if you use these props together, the component prop will determine the 
 variant="h6" and component="h2"
 
 For color, the value "secondary" and "textSecondary" are distinct.
+
+# Button Componant - Practice
+
+https://material-ui.com/components/buttons/#button
+
+A good bit of variety of button styles here, such as ones including icons or images.
+
+Check out the api links for Button, ButtonBase and IconButton for all prop options:
+https://material-ui.com/components/buttons/#api
