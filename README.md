@@ -15,3 +15,15 @@ The root level route / points to the Notes component (page) and /create points t
 The index.js is rendering the App component to mount on the root id element like normal but has it nested in the React.StrictMode component.
 
 The index.js is also importing index.css and the index.html is including the google roboto fonts (line 12 at this point).
+
+# The Typography Component
+
+https://material-ui.com/components/typography/#typography
+
+Under demo, click "show source" to see how component used for displayed end result.
+
+The Typograph component with no props (ie. variant) will default to paragraph text.
+
+See all props available for component here: https://material-ui.com/api/typography/
+
+We looked at varient, color, align and noWrap here.
