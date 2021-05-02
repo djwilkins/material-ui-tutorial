@@ -21,13 +21,18 @@ export default function Create() {
   const classes = useStyles();
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
+  const [titleError, setTitleError] = useState(false);
+  const [detailsError, setDetailsError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default action of page refresh
 
-    if (title && details) {
-      console.log(title, details);
-    }
+    // Form validation (set error value to true if value missing)
+    (!title) ? setTitleError(true) : setTitleError(false);
+    (!details) ? setDetailsError(true) : setDetailsError(false);
+    if (!title || !details) return; // return early if anything missing
+
+    console.log(title, details);
   }
 
   return (
@@ -50,6 +55,7 @@ export default function Create() {
           color="secondary"
           fullWidth
           required
+          error={titleError}
         >
         </TextField>
         <TextField
@@ -62,6 +68,7 @@ export default function Create() {
           rows={4}
           fullWidth
           required
+          error={detailsError}
         >
         </TextField>
 
