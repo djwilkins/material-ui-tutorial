@@ -99,3 +99,15 @@ https://material-ui.com/customization/color/#color
 # Text Fields
 
 https://material-ui.com/components/text-fields/#text-field
+
+# Radio Buttons
+
+https://material-ui.com/components/radio-buttons/#radio
+
+Using material ui radio buttons effectively involves using multiple related material ui components.
+
+- FormControl - This is the parent component for the set of components we'll be utilizing here.
+- FormLabel - This is one of two components that are direct children of FormControl, this one labeling the overall group
+- RadioGroup - This is two of two components that are direct children of FormControl (for Radio buttons anyway), this one will contain the radio buttons that are related and the user can only select one of.
+- FormControlLabel - Is a component that can be a direct child of RadioGroup (or for check boxes, a child of FormGroup). It provides a label for each Radio button.
+- Radio - The Radio component itself, when used with label/FormControlLabel, is passed into a FormControlLabel's control prop.

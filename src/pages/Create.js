@@ -5,6 +5,9 @@ import Container from '@material-ui/core/Container';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // Create custom useStyles Hook from makeStyles
 // It will hold custom css classes
@@ -23,6 +26,7 @@ export default function Create() {
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [category, setCategory] = useState('todos');
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default action of page refresh
@@ -32,7 +36,7 @@ export default function Create() {
     (!details) ? setDetailsError(true) : setDetailsError(false);
     if (!title || !details) return; // return early if anything missing
 
-    console.log(title, details);
+    console.log(title, details, category);
   }
 
   return (
@@ -71,6 +75,13 @@ export default function Create() {
           error={detailsError}
         >
         </TextField>
+
+        <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+          <FormControlLabel value="money" control={<Radio />} label="Money" />
+          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+          <FormControlLabel value="reminder" control={<Radio />} label="Reminder" />
+          <FormControlLabel value="work" control={<Radio />} label="Work" />
+        </RadioGroup>
 
         <Button
           type="submit"
