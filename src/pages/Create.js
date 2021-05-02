@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
@@ -19,6 +19,16 @@ const useStyles = makeStyles({
 export default function Create() {
   // Grab css classes from useStyles hook to apply to components below
   const classes = useStyles();
+  const [title, setTitle] = useState('');
+  const [details, setDetails] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default action of page refresh
+
+    if (title && details) {
+      console.log(title, details);
+    }
+  }
 
   return (
     <Container>
@@ -31,8 +41,9 @@ export default function Create() {
         Create a New Note
       </Typography>
 
-      <form noValidate autoComplete="off">
+      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
+          onChange={(e) => setTitle(e.target.value)}
           className={classes.field}
           label="Note Title"
           variant="outlined"
@@ -42,6 +53,7 @@ export default function Create() {
         >
         </TextField>
         <TextField
+          onChange={(e) => setDetails(e.target.value)}
           className={classes.field}
           label="Details"
           variant="outlined"
@@ -52,17 +64,16 @@ export default function Create() {
           required
         >
         </TextField>
-      </form>
 
-      <Button
-        onClick={() => console.log("You clicked me.")}
-        type="submit"
-        color="secondary"
-        variant="contained"
-        endIcon={<KeyboardArrowRightIcon/>}
-      >
-        Submit
-      </Button>
+        <Button
+          type="submit"
+          color="secondary"
+          variant="contained"
+          endIcon={<KeyboardArrowRightIcon/>}
+        >
+          Submit
+        </Button>
+      </form>
 
     </Container>
   )
