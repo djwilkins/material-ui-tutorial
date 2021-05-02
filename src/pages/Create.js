@@ -1,10 +1,11 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 export default function Create() {
   return (
-    <div>
+    <Container>
       <Typography
         variant="h6"
         color="textSecondary"
@@ -22,6 +23,6 @@ export default function Create() {
       >
         Submit
       </Button>
-    </div>
+    </Container>
   )
 }

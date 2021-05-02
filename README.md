@@ -39,7 +39,7 @@ variant="h6" and component="h2"
 
 For color, the value "secondary" and "textSecondary" are distinct.
 
-# Button Componant - Practice
+# Button Component - Practice
 
 https://material-ui.com/components/buttons/#button
 
@@ -48,5 +48,14 @@ A good bit of variety of button styles here, such as ones including icons or ima
 Check out the api links for Button, ButtonBase and IconButton for all prop options:
 https://material-ui.com/components/buttons/#api
 
-# Button Componant - Demo App Implementation
+# Button Component - Demo App Implementation
 
+# Container Component
+
+https://material-ui.com/components/container/#container
+
+Next content in a Container component to center it horizontally.
+
+(Here we simply wanted to put some margin on the left.)
+
+See all prop options here: https://material-ui.com/api/container/
