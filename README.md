@@ -77,3 +77,21 @@ makeStyles is a Material UI custom React Hook that allows you to apply some cust
 https://material-ui.com/styles/api/#makestyles-styles-options-hook
 
 Note: Each parameter you pass into the makeStyles object will be the name of a css class you're defining.
+
+# Custom Themes
+
+In Material UI, the standard theme defines many default style values.
+
+For example, when you use "primary" or "secondary" for the color prop on a given Material UI component, what those colors are is defined in the standard theme.
+
+Same is the case for how big an h1 should be or what default font family is used for all the components.
+
+With Custom Themes, we can define our own values for default material UI component styles instead.
+
+And fortuntely, we can just override the specific styles we want different from the default.
+
+(You can explore the default theme object in the docs here: https://material-ui.com/customization/default-theme/#default-theme
+For example, find colors defined under palette.)
+
+For setting custom colors, can also use Material UI color objects from here:
+https://material-ui.com/customization/color/#color
