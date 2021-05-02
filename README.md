@@ -70,3 +70,10 @@ Note: Clicking on the icon will provide you with the import code needed.
 
 See all the props passable to icon components (color, fontSize, etc) through the footer api links here:
 https://material-ui.com/components/material-icons/#material-icons
+
+# makeStyles Hook
+
+makeStyles is a Material UI custom React Hook that allows you to apply some custom styles.
+https://material-ui.com/styles/api/#makestyles-styles-options-hook
+
+Note: Each parameter you pass into the makeStyles object will be the name of a css class you're defining.
