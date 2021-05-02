@@ -59,3 +59,14 @@ Next content in a Container component to center it horizontally.
 (Here we simply wanted to put some margin on the left.)
 
 See all prop options here: https://material-ui.com/api/container/
+
+# Icons
+
+From the getting started page, we run "$ npm install @material-ui/icons" to install the icons package to our project.
+
+Find the available icons (and varied icon styles) here: https://material-ui.com/components/material-icons/#material-icons
+
+Note: Clicking on the icon will provide you with the import code needed.
+
+See all the props passable to icon components (color, fontSize, etc) through the footer api links here:
+https://material-ui.com/components/material-icons/#material-icons

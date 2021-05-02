@@ -2,6 +2,7 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import AcUnitOutlinedIcon from '@material-ui/icons/AcUnitOutlined';
 
 export default function Create() {
   return (
@@ -23,6 +24,15 @@ export default function Create() {
       >
         Submit
       </Button>
+
+      {/* icons */}
+      <AcUnitOutlinedIcon />
+      <AcUnitOutlinedIcon color="secondary" fontSize="large" />
+      <AcUnitOutlinedIcon color="secondary" fontSize="default" />
+      <AcUnitOutlinedIcon color="action" fontSize="small" />
+      <AcUnitOutlinedIcon color="error" fontSize="small" />
+      <AcUnitOutlinedIcon color="disable" fontSize="small" />
+
     </Container>
   )
 }
