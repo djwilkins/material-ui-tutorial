@@ -2,16 +2,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Notes from './pages/Notes'
 import Create from './pages/Create'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { purple } from '@material-ui/core/colors';
+import { purple, grey } from '@material-ui/core/colors';
 
 // Create a custom material ui theme
 // Overwriting just the values we want different
 // Note: typography used was imported in index.css
 const theme = createMuiTheme({
   palette: {
-    primary: {
-      main: '#fefefe'
-    },
+    primary: grey,
     secondary: purple
   },
   typography: {

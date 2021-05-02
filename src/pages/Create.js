@@ -8,6 +8,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import { grey } from '@material-ui/core/colors';
+
 
 // Create custom useStyles Hook from makeStyles
 // It will hold custom css classes
@@ -76,12 +80,15 @@ export default function Create() {
         >
         </TextField>
 
-        <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
-          <FormControlLabel value="money" control={<Radio />} label="Money" />
-          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-          <FormControlLabel value="reminder" control={<Radio />} label="Reminder" />
-          <FormControlLabel value="work" control={<Radio />} label="Work" />
-        </RadioGroup>
+        <FormControl className={classes.field}>
+          <FormLabel>Note Category</FormLabel>
+          <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel value="reminder" control={<Radio />} label="Reminder" />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
+        </FormControl>
 
         <Button
           type="submit"
