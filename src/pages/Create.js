@@ -3,17 +3,22 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-// import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Create custom useStyles Hook from makeStyles
 // It will hold custom css classes
-// const useStyles = makeStyles({
-
-// })
+const useStyles = makeStyles({
+  field: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: 'block'
+  }
+})
 
 export default function Create() {
   // Grab css classes from useStyles hook to apply to components below
-  // const classes = useStyles();
+  const classes = useStyles();
 
   return (
     <Container>
@@ -25,6 +30,29 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
+
+      <form noValidate autoComplete="off">
+        <TextField
+          className={classes.field}
+          label="Note Title"
+          variant="outlined"
+          color="secondary"
+          fullWidth
+          required
+        >
+        </TextField>
+        <TextField
+          className={classes.field}
+          label="Details"
+          variant="outlined"
+          color="secondary"
+          multiline
+          rows={4}
+          fullWidth
+          required
+        >
+        </TextField>
+      </form>
 
       <Button
         onClick={() => console.log("You clicked me.")}
