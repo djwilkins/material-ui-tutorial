@@ -143,3 +143,11 @@ Second, we utilize a non-default / POST method fetch to add a new well formed no
 Note: JSON Server also handles for us adding a new unique id to the new addition to our notes array there.
 
 Third, we utilize the fetch request being asynchronous to hook a .then on to it that redirects the user to the main page after submitting a new note. We also utilize the React Router useHistory Hook here. https://reactrouter.com/web/api/Hooks
+
+# Material UI Grid System
+
+"The Material UI Grid System is a 12 column grid system based on flexbox." (paraphrase)
+
+Here we implement a responsive dividing up of the available columns for different screen sizes (xs, small and medium).
+
+Each applies to its size "and up" so even though we don't utilize the "large" size, the medium sizing applies to screens of that size as well.
