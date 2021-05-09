@@ -136,4 +136,10 @@ That was just to load the static json file once.)
 
 Next, we utilize React's useState and useEffect Hooks to manage our Notes component state.
 
-First, we use useEffect to load the json data and save it to state.
+First, we use useEffect to load the json data and save it to state (also utilizing a simple fetch with the default GET method here).
+
+Second, we utilize a non-default / POST method fetch to add a new well formed note to our data/db.json (again, thanks to JSON Server handling the POST).
+
+Note: JSON Server also handles for us adding a new unique id to the new addition to our notes array there.
+
+Third, we utilize the fetch request being asynchronous to hook a .then on to it that redirects the user to the main page after submitting a new note. We also utilize the React Router useHistory Hook here. https://reactrouter.com/web/api/Hooks

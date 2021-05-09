@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
@@ -26,6 +27,7 @@ const useStyles = makeStyles({
 export default function Create() {
   // Grab css classes from useStyles hook to apply to components below
   const classes = useStyles();
+  const history = useHistory();
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
@@ -40,13 +42,13 @@ export default function Create() {
     (!details) ? setDetailsError(true) : setDetailsError(false);
     if (!title || !details) return; // return early if anything missing
 
-    // If made it this far, new todo data is good
+    // If made it this far, new note data is good
     // Submit to data/db.json with POST request to save
     fetch('http://localhost:8000/notes', {
       method: 'POST',
       headers: {"Content-type": "application/json"},
       body: JSON.stringify({ title, details, category })
-    });
+    }).then(() => history.push('/'));
   } // Note: JSON Server handles adding a unique id for us
   // Else could use something like lodash _.uniqueId()
 
