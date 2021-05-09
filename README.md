@@ -131,3 +131,9 @@ $ http://localhost:8000/notes
 https://github.com/djwilkins/udacity-nano-intermediate-js-oop/blob/master/scripts/load-local-json.js
 
 That was just to load the static json file once.)
+
+# Using JSON Server - Implementation
+
+Next, we utilize React's useState and useEffect Hooks to manage our Notes component state.
+
+First, we use useEffect to load the json data and save it to state.
