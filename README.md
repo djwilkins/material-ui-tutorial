@@ -111,3 +111,23 @@ Using material ui radio buttons effectively involves using multiple related mate
 - RadioGroup - This is two of two components that are direct children of FormControl (for Radio buttons anyway), this one will contain the radio buttons that are related and the user can only select one of.
 - FormControlLabel - Is a component that can be a direct child of RadioGroup (or for check boxes, a child of FormGroup). It provides a label for each Radio button.
 - Radio - The Radio component itself, when used with label/FormControlLabel, is passed into a FormControlLabel's control prop.
+
+# Using JSON Server
+
+JSON Server wraps a JSON file in REST api so we can interact with it (nice).
+
+It is not a part of material-ui - just something we're using with our demo app for starting data.
+
+We installed in globally like this:
+$ npm install -g json-server
+
+Then we ran this command to have json-server watch manage rest api style interaction with our data file with this command:
+$ json-server --watch data/db.json --port 8000
+
+Confirmed it was working to serve out the data in browser like this:
+$ http://localhost:8000/notes
+
+(I alternatively served a local json file using pure javascript (no extra library or service) on a recent project like this:
+https://github.com/djwilkins/udacity-nano-intermediate-js-oop/blob/master/scripts/load-local-json.js
+
+That was just to load the static json file once.)
