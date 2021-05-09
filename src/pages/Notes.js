@@ -11,7 +11,9 @@ export default function Notes() {
 
   return (
     <div>
-      Notes page
+      {notes.map(note => (
+        <p key={note.id}>{ note.title }</p>
+      ))}
     </div>
   )
 }
