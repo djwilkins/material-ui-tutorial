@@ -40,8 +40,15 @@ export default function Create() {
     (!details) ? setDetailsError(true) : setDetailsError(false);
     if (!title || !details) return; // return early if anything missing
 
-    console.log(title, details, category);
-  }
+    // If made it this far, new todo data is good
+    // Submit to data/db.json with POST request to save
+    fetch('http://localhost:8000/notes', {
+      method: 'POST',
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify({ title, details, category })
+    });
+  } // Note: JSON Server handles adding a unique id for us
+  // Else could use something like lodash _.uniqueId()
 
   return (
     <Container>
