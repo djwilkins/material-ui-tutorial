@@ -151,3 +151,21 @@ Third, we utilize the fetch request being asynchronous to hook a .then on to it 
 Here we implement a responsive dividing up of the available columns for different screen sizes (xs, small and medium).
 
 Each applies to its size "and up" so even though we don't utilize the "large" size, the medium sizing applies to screens of that size as well.
+
+# Card Component
+
+The Material UI, the official doc examples show, can basically contain whatever content you want.
+
+https://material-ui.com/components/cards/#card
+
+(The examples above go from very simple to more complex.)
+
+As such, I expect it should work quite well for my savings modeling app.
+
+Here, building on the food item example from the docs, we repurpose a number of the same Card related/embeddable components here.
+
+Though for the header icon, we utilized DeleteOutlined Material UI icon component instead which is a trash can icon.
+
+We also add some spacing between in the items in the Grid (back in the parent Notes component.)
+
+And using the "elevation" prop, passed to the <Card> parent component, we define the amount of the card(s) "popping" up from the page (how much shadow / depth it reflects).

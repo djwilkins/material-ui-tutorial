@@ -18,7 +18,7 @@ export default function Notes() {
   // For "lg" (large) size screens and up, each Grid item below should take up 4 columns (in the 12 column grid)
   return (
     <Container>
-      <Grid container>
+      <Grid container spacing={3}>
         {notes.map(note => (
           <Grid item key={note.id} xs={12} md={6} lg={4}>
             <NoteCard note={note} />
