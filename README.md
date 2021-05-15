@@ -169,3 +169,15 @@ Though for the header icon, we utilized DeleteOutlined Material UI icon componen
 We also add some spacing between in the items in the Grid (back in the parent Notes component.)
 
 And using the "elevation" prop, passed to the <Card> parent component, we define the amount of the card(s) "popping" up from the page (how much shadow / depth it reflects).
+
+# Card Component - Implementing handleDelete
+
+Finally, we implement a handleDelete function by first creating it in the Note component (because it's the level at which the notes state is managed).
+
+We then pass the handleDelete method through a prop into the NoteCard child component and hook the IconButton/trash can icon's onClick up to utilize it.
+
+You can see that the db.json is down one Note per my testing this out / confirming it worked.
+
+(See also the async/await usage in the handleDelete function itself.
+Note also the const variable in it... that is not changed within the method.
+Yet each time it runs, it will point to a new array returned by filter.)
