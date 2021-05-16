@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { makeStyles, Drawer, Typography } from '@material-ui/core'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -24,12 +24,16 @@ const useStyles = makeStyles({
     },
     root: {
         display: 'flex' // We're making this a flex row (default) so our Drawer/sidebar doesn't cover up our main page content below.
+    },
+    active: {
+        background: '#e6e6e6' // Apply an active style to the Sidebar (Drawer) navigation link of the page we're currently already on.
     }
   });
 
 export default function Layout({ children }) {
     const classes = useStyles();
     const history = useHistory();
+    const location = useLocation();
 
     const menuItems = [
         {
@@ -65,6 +69,7 @@ export default function Layout({ children }) {
                               key={link.text}
                               button
                               onClick={() => history.push(link.path)}
+                              className={link.path === location.pathname ? classes.active : null }
                             >
                                 <ListItemIcon>{link.icon}</ListItemIcon>
                                 <ListItemText primary={link.text} />
