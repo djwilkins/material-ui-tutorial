@@ -221,3 +221,5 @@ Material UI lists can do a lot (https://material-ui.com/components/lists/). In t
 First, we import the list/list item related components we need - as well as a couple of Material UI icons.
 
 Then we use that map function to generate the set of nested components we want for each navigation link in our Sidebar (using an array of objects we defined locally.)
+
+Second, we turn our list items into a button with the ListItem "button" prop and utilize React Router's useHistory Hook in our ListItem's onClick prop to load up the app page according to the path value in our menuItems objects.

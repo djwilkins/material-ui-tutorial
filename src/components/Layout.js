@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import { makeStyles, Drawer, Typography } from '@material-ui/core'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -28,6 +29,7 @@ const useStyles = makeStyles({
 
 export default function Layout({ children }) {
     const classes = useStyles();
+    const history = useHistory();
 
     const menuItems = [
         {
@@ -61,6 +63,8 @@ export default function Layout({ children }) {
                         {menuItems.map((link) => (
                             <ListItem
                               key={link.text}
+                              button
+                              onClick={() => history.push(link.path)}
                             >
                                 <ListItemIcon>{link.icon}</ListItemIcon>
                                 <ListItemText primary={link.text} />
