@@ -207,3 +207,7 @@ First, we've added a Drawer component with a simple Typography component/header 
 We've created a style class with a width setting and assigned it to it (className) and passed it the "variant" and "anchor" props.
 
 (Next we'll do something to adjust the default Material UI styling on our Drawer component... through the "classes" prop... note the distinction to the className prop, which we'll require to overwrite the Material UI component's existing styling object.)
+
+Second, we increase the width of the Drawer component's default style class for paper (another material ui component it contains) to breath a bit more. We do this using the Drawer's "classes" prop and provide a style object with the diff values we want to overwrite the default style object.
+
+We also make the main div we're returning all our Layout component content in a flexbox row (default flex direction) so that our Drawer (sidebar) doesn't overlap/cover up our main body page content.
