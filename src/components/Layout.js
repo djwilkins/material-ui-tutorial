@@ -11,24 +11,30 @@ import AddCircleOutlined from '@material-ui/icons/AddCircleOutlined';
 // Create custom useStyles Hook from makeStyles
 // It will hold custom css classes
 const drawerWidth = 240;
-const useStyles = makeStyles({
-    page: {
-        background: '#f9f9f9',
-        width: '100%'
-    },
-    drawer: {
-        width: drawerWidth
-    },
-    drawerPaper: {
-        width: drawerWidth
-    },
-    root: {
-        display: 'flex' // We're making this a flex row (default) so our Drawer/sidebar doesn't cover up our main page content below.
-    },
-    active: {
-        background: '#e6e6e6' // Apply an active style to the Sidebar (Drawer) navigation link of the page we're currently already on.
-    }
-  });
+const useStyles = makeStyles((theme) => {
+    return {
+        page: {
+            background: '#f9f9f9',
+            width: '100%',
+            padding: theme.spacing(3)
+        },
+        drawer: {
+            width: drawerWidth
+        },
+        drawerPaper: {
+            width: drawerWidth
+        },
+        root: {
+            display: 'flex' // We're making this a flex row (default) so our Drawer/sidebar doesn't cover up our main page content below.
+        },
+        active: {
+            background: '#e6e6e6' // Apply an active style to the Sidebar (Drawer) navigation link of the page we're currently already on.
+        },
+        title: {
+            padding: theme.spacing(2)
+        }
+      }
+});
 
 export default function Layout({ children }) {
     const classes = useStyles();
@@ -60,7 +66,7 @@ export default function Layout({ children }) {
               classes={{ paper: classes.drawerPaper }}
             >
                 <div>
-                    <Typography variant="h5">
+                    <Typography variant="h5" className={classes.title}>
                         Ninja Notes
                     </Typography>
                     <List>

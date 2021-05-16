@@ -225,3 +225,11 @@ Then we use that map function to generate the set of nested components we want f
 Second, we turn our list items into a button with the ListItem "button" prop and utilize React Router's useHistory Hook in our ListItem's onClick prop to load up the app page according to the path value in our menuItems objects.
 
 Third, we create a new "active" style and utilize React's useLocation Hook to conditionally apply our new "active" style on the ListItem where the source menuItems object's path is equal to the current path (current useLocation's pathname value).
+
+# More on makeStyles
+
+It turns out, makeStyles has some powerful additional options when instead of simply passing it an object with style classes on it, you instead pass it a function that returns the object with style classes.
+
+First, we hear update our use of makeStyles to do the above and in so doing, are able to pass the "theme" object into said function and utilize it in our object of style classes.
+
+We do that here for a couple of classes (one new) and for padding, utilizing the theme.spacing method which accepts a number that it multiplies by the themes base spacing value. Our updates here get some much needed padding between our main page content (page class) and sideBar title (title class) and the top of the page.
