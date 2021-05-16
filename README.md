@@ -233,3 +233,7 @@ It turns out, makeStyles has some powerful additional options when instead of si
 First, we hear update our use of makeStyles to do the above and in so doing, are able to pass the "theme" object into said function and utilize it in our object of style classes.
 
 We do that here for a couple of classes (one new) and for padding, utilizing the theme.spacing method which accepts a number that it multiplies by the themes base spacing value. Our updates here get some much needed padding between our main page content (page class) and sideBar title (title class) and the top of the page.
+
+Second, we make use of another powerful makeStyles advanced option again allowing us to make styles more dynamic, this time in the NoteCard component. In this case, we utilize the ability to pass a value into useStyles (ie. the function returned by makeStyles), to in turn use that value within the object of style classes we pass to makeStyles to conditionally define our styles.
+
+More specifically, here having a red border defined for the Card componenet (we're using for each Note) just when the Note is in the work category.
