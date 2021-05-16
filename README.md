@@ -181,3 +181,9 @@ You can see that the db.json is down one Note per my testing this out / confirmi
 (See also the async/await usage in the handleDelete function itself.
 Note also the const variable in it... that is not changed within the method.
 Yet each time it runs, it will point to a new array returned by filter.)
+
+# Layout Component
+
+First, we simply create a new function component called Layout.
+
+We wrap everything our App component returns that is nested inside the Router component (since we'll be using it in our Layout component) and we return from our Layout component all these nested components we're passing to it as children now.
