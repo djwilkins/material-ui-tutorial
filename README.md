@@ -187,3 +187,7 @@ Yet each time it runs, it will point to a new array returned by filter.)
 First, we simply create a new function component called Layout.
 
 We wrap everything our App component returns that is nested inside the Router component (since we'll be using it in our Layout component) and we return from our Layout component all these nested components we're passing to it as children now.
+
+Second, we utilize makeStyles here to create a css class (like we did before in Create component).  We apply it to just the nested children of Layout in App return structure (which now has its own div we apply the class to.)
+
+We also use a couple of JSX comments as placeholders for the new layout features we'll build on this foundation later (an app bar/header and side drawer).
