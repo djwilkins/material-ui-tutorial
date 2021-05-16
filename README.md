@@ -191,3 +191,19 @@ We wrap everything our App component returns that is nested inside the Router co
 Second, we utilize makeStyles here to create a css class (like we did before in Create component).  We apply it to just the nested children of Layout in App return structure (which now has its own div we apply the class to.)
 
 We also use a couple of JSX comments as placeholders for the new layout features we'll build on this foundation later (an app bar/header and side drawer).
+
+# Drawer (Sidebar)
+
+Material UI has a lot of "Drawer" (Sidebar) options - https://material-ui.com/components/drawers/#drawer
+
+These are basically side panel / navigation menus that can be toggled to slide in or in this case, can just be a permanent sidebar in your app's layout.
+
+(Note: Side sheets are similar to "Drawers" but are less about navigation and more often pane's for additional settings or supplemental information. For an app with both, it is recommended they two be on opposite and not the same side for clarity https://material.io/components/sheets-side#placement)
+
+# Permanent Drawer (Sidebar) - Implementation
+
+First, we've added a Drawer component with a simple Typography component/header in it.
+
+We've created a style class with a width setting and assigned it to it (className) and passed it the "variant" and "anchor" props.
+
+(Next we'll do something to adjust the default Material UI styling on our Drawer component... through the "classes" prop... note the distinction to the className prop, which we'll require to overwrite the Material UI component's existing styling object.)
