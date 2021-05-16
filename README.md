@@ -211,3 +211,13 @@ We've created a style class with a width setting and assigned it to it (classNam
 Second, we increase the width of the Drawer component's default style class for paper (another material ui component it contains) to breath a bit more. We do this using the Drawer's "classes" prop and provide a style object with the diff values we want to overwrite the default style object.
 
 We also make the main div we're returning all our Layout component content in a flexbox row (default flex direction) so that our Drawer (sidebar) doesn't overlap/cover up our main body page content.
+
+# List and List Items
+
+Buliding on our Drawer (Sidebar), we start fleshing out our (short two item) navigation list.
+
+Material UI lists can do a lot (https://material-ui.com/components/lists/). In this case, we're mostly following type of usage of list/list items from the Materiel UI Drawer (Sidebar) documentation examples.
+
+First, we import the list/list item related components we need - as well as a couple of Material UI icons.
+
+Then we use that map function to generate the set of nested components we want for each navigation link in our Sidebar (using an array of objects we defined locally.)
