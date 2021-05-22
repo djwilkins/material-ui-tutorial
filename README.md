@@ -237,3 +237,13 @@ We do that here for a couple of classes (one new) and for padding, utilizing the
 Second, we make use of another powerful makeStyles advanced option again allowing us to make styles more dynamic, this time in the NoteCard component. In this case, we utilize the ability to pass a value into useStyles (ie. the function returned by makeStyles), to in turn use that value within the object of style classes we pass to makeStyles to conditionally define our styles.
 
 More specifically, here having a red border defined for the Card componenet (we're using for each Note) just when the Note is in the work category.
+
+# App Bar
+
+After adding the AppBar component with the Toolbar child component (and a Typography component with a Web page title therein), it became clear the AppBar was using the primary color I'd set in App.js (the custom theme created through createMuiTheme) as its background (an undesirable grey here).
+
+So first, I fixed this background to the expected white with a new class defined in Layout.js makestyles and used on the AppBar component.
+
+In the same initial commit, we also used this custom 'appbar' class to fix the width of the App bar to not start until passed the Sidebar (drawer) on the left.
+
+* We do this using the css calc option and utilize our prior drawerWidth const to give our appbar the width of 100% of the page's width minus what the sidebar is using.

@@ -7,6 +7,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SubjectOutlined from '@material-ui/icons/SubjectOutlined';
 import AddCircleOutlined from '@material-ui/icons/AddCircleOutlined';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+
 
 // Create custom useStyles Hook from makeStyles
 // It will hold custom css classes
@@ -25,13 +28,17 @@ const useStyles = makeStyles((theme) => {
             width: drawerWidth
         },
         root: {
-            display: 'flex' // We're making this a flex row (default) so our Drawer/sidebar doesn't cover up our main page content below.
+            display: 'flex', // We're making this a flex row (default) so our Drawer/sidebar doesn't cover up our main page content below.
         },
         active: {
             background: '#e6e6e6' // Apply an active style to the Sidebar (Drawer) navigation link of the page we're currently already on.
         },
         title: {
             padding: theme.spacing(2)
+        },
+        appbar: {
+            background: '#ffffff',
+            width: `calc(100% - ${drawerWidth}px)` // subtracting the drawerWidth const value (applied in the drawer class above) from 100% of the pages width to get our appbar's width
         }
       }
 });
@@ -57,6 +64,15 @@ export default function Layout({ children }) {
     return (
         <div className={classes.root}>
             {/* app bar */}
+            <AppBar
+              className={classes.appbar}
+            >
+                <Toolbar>
+                    <Typography>
+                        Welcome to the ninja notes website
+                    </Typography>
+                </Toolbar>
+            </AppBar>
 
             {/* side drawer */}
             <Drawer
