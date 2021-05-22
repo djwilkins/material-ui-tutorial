@@ -9,6 +9,7 @@ import SubjectOutlined from '@material-ui/icons/SubjectOutlined';
 import AddCircleOutlined from '@material-ui/icons/AddCircleOutlined';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import { format } from 'date-fns'
 
 
 // Create custom useStyles Hook from makeStyles
@@ -40,7 +41,10 @@ const useStyles = makeStyles((theme) => {
             background: '#ffffff',
             width: `calc(100% - ${drawerWidth}px)` // subtracting the drawerWidth const value (applied in the drawer class above) from 100% of the pages width to get our appbar's width
         },
-        toolbar: theme.mixins.toolbar // This will grab the toolbar component's styling, including the toolbar's height (we apply this to an empty div above the 'children'/notes below as an offset to get them down beneath the toolbar)
+        toolbar: theme.mixins.toolbar, // This will grab the toolbar component's styling, including the toolbar's height (we apply this to an empty div above the 'children'/notes below as an offset to get them down beneath the toolbar)
+        date: {
+            flexGrow: 1
+        }
       }
 });
 
@@ -65,13 +69,16 @@ export default function Layout({ children }) {
     return (
         <div className={classes.root}>
             {/* app bar */}
-            <AppBar 
+            <AppBar
               className={classes.appbar}
               elevation={0}
             >
                 <Toolbar>
+                    <Typography className={classes.date}>
+                        Today is the { format(new Date(), 'do MMMM Y') }
+                    </Typography>
                     <Typography>
-                        Welcome to the ninja notes website
+                        Mario
                     </Typography>
                 </Toolbar>
             </AppBar>

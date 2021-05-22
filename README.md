@@ -253,3 +253,13 @@ In the same initial commit, we also used this custom 'appbar' class to fix the w
 Secondly, for an addition style fixing commit, we create a new makestyle class of toolbar and in this case, we utilize material ui's theme object (available to makestyles) to simply apply the default toolbar styling to our new class.  By that, our new class includes the toolbar's default height.  We then apply this new toolbar class to a new div right above the 'children' of our Laytout component (the notes being displayed in the layout) to offset them / push them down to be under the actual toolbar and no longer covered up by it.
 
 We also add the elevation prop to our AppBar component with a vlue of 0 to remove its dropshadow to none.
+
+# App Bar - Date in App Bar
+
+Third, we 'npm install date-fns' and utilize it in Layout.js to formate the date in the App bar with a 'Today is the DATE HERE' message.
+
+And also add another Typography component in our App Bar with a username (Mario).
+
+In order to get this username to the right side of the page (and not directly next to our date message), we give our date Typography component a new class and give it a flexGrow of 1 (remember, everything in our Layout component is in a div with flex display applied).
+
+This flexGrow has our date Typography component take up all the horizontal space that it can (our flex container being row/horizontal direction), pushing the next Typography component / with our placeholder user name to the far right side of the page.
