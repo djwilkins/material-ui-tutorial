@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => {
         appbar: {
             background: '#ffffff',
             width: `calc(100% - ${drawerWidth}px)` // subtracting the drawerWidth const value (applied in the drawer class above) from 100% of the pages width to get our appbar's width
-        }
+        },
+        toolbar: theme.mixins.toolbar // This will grab the toolbar component's styling, including the toolbar's height (we apply this to an empty div above the 'children'/notes below as an offset to get them down beneath the toolbar)
       }
 });
 
@@ -64,8 +65,9 @@ export default function Layout({ children }) {
     return (
         <div className={classes.root}>
             {/* app bar */}
-            <AppBar
+            <AppBar 
               className={classes.appbar}
+              elevation={0}
             >
                 <Toolbar>
                     <Typography>
@@ -103,6 +105,7 @@ export default function Layout({ children }) {
             </Drawer>
 
             <div className={classes.page}>
+                <div className={classes.toolbar}></div>
                 {children}
             </div>
         </div>
