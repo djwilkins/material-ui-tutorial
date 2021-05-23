@@ -276,3 +276,4 @@ First, we add an Avatar component for our mock/hardcoded user (Mario) in the top
 
 Second, we utilize the Material UI Card component's suppoort for an "avatar" prop to add an avatar to each of our Note Cards. In this case, we utilize the avatar componenet's ability to use the fiter letter (as alternate to image or icon) of string by passing it the note category uppercased.
 
+Third, we remove our prior 'test' class in NoteCard and repurpose it as an 'avatar' class. Where as our prior 'test' class applied a red outline to the entire Card component when it was a 'work' category note, our new 'avatar' class provides one of four background colors to the Avatar component within each Note Card based on its category.

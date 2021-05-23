@@ -6,13 +6,21 @@ import Typography from '@material-ui/core/Typography';
 import { IconButton, makeStyles } from '@material-ui/core';
 import { DeleteOutlined }  from '@material-ui/icons';
 import Avatar from '@material-ui/core/Avatar';
+import { yellow, green, pink, blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
-    test: {
-        border: (note) => {
+    avatar: {
+        backgroundColor: (note) => {
             if (note.category === 'work') {
-                return '1px solid red'
+                return yellow[700]
             }
+            if (note.category === 'money') {
+                return green[500]
+            }
+            if (note.category === 'todos') {
+                return pink[500]
+            }
+            return blue[500]
         }
     }
 });
@@ -22,10 +30,10 @@ export default function NoteCard({ note, handleDelete }) {
 
     return (
         <div>
-            <Card elevation={3} className={classes.test}>
+            <Card elevation={3}>
                 <CardHeader
                 avatar={
-                    <Avatar>
+                    <Avatar className={classes.avatar}>
                         {note.category[0].toUpperCase()}
                     </Avatar>
                 }
