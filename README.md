@@ -277,3 +277,22 @@ First, we add an Avatar component for our mock/hardcoded user (Mario) in the top
 Second, we utilize the Material UI Card component's suppoort for an "avatar" prop to add an avatar to each of our Note Cards. In this case, we utilize the avatar componenet's ability to use the fiter letter (as alternate to image or icon) of string by passing it the note category uppercased.
 
 Third, we remove our prior 'test' class in NoteCard and repurpose it as an 'avatar' class. Where as our prior 'test' class applied a red outline to the entire Card component when it was a 'work' category note, our new 'avatar' class provides one of four background colors to the Avatar component within each Note Card based on its category.
+
+# React Masonry CSS
+
+Material UI, at this time, does not offer a masonry grid system*. This leave us with undesirable empty white space given Notes very height. Here we will implement a third party option called [React Masonry CSS](https://www.npmjs.com/package/react-masonry-css) to achieve this effect in our Notes app at present. 
+
+*Masonry is however, on Material UI's roadmap (https://material-ui.com/discover-more/roadmap/#main-content).
+
+First, we npm install this third party library (npm i react-masonry-css).
+
+After that, we simple work to replace our Material UI Grid container / Grid item implementation with the Masonry component implementation.
+
+I followed the [official docs](https://www.npmjs.com/package/react-masonry-css) implementaiton to:
+(1) Wrap our notes.map JSX logic inside the Masonry componenet (with the breakpointCols, className and columnClassName props examplified in the docs example)
+(2) In addition to (1) replacing the Grid container with the Masonry component, our notes.map JSX now returns a standard div for each note instead of a Grid item (all Grid item props aslo stripped away).
+(3) For the Masonry components three props noted in (1), I applied the official doc styles (with a couple minor adjustments - ie. no grey background) by converting them into Material UI makeStyles (some minor syntax adjustments required there.)
+(4) I also utilized the official doc suggested breakpointColumnsObj object for a responsive number of columns per screen width (adjusted to fit this app better).
+(5) And finally, the third official doc provided class of my-masonry-grid-column > div (myMasonryGridColumnDiv in makeStyles) applies to the now standard div.
+
+The only change in this commit from the tutorial video (and not just following the official docs directly) was removing the grey background from the my-masonry-grid-column > div, which here has an undesirable effect (per Material UI Card componenet context & our app styling in general).
