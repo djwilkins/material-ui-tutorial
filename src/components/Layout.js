@@ -9,6 +9,7 @@ import SubjectOutlined from '@material-ui/icons/SubjectOutlined';
 import AddCircleOutlined from '@material-ui/icons/AddCircleOutlined';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Avatar from '@material-ui/core/Avatar';
 import { format } from 'date-fns'
 
 
@@ -44,6 +45,9 @@ const useStyles = makeStyles((theme) => {
         toolbar: theme.mixins.toolbar, // This will grab the toolbar component's styling, including the toolbar's height (we apply this to an empty div above the 'children'/notes below as an offset to get them down beneath the toolbar)
         date: {
             flexGrow: 1
+        },
+        avatar: {
+            marginLeft: theme.spacing(2) // Give 2x the theme's base spacing
         }
       }
 });
@@ -80,6 +84,7 @@ export default function Layout({ children }) {
                     <Typography>
                         Mario
                     </Typography>
+                    <Avatar src="/mario-av.png" className={classes.avatar} />
                 </Toolbar>
             </AppBar>
 

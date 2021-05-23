@@ -263,3 +263,13 @@ And also add another Typography component in our App Bar with a username (Mario)
 In order to get this username to the right side of the page (and not directly next to our date message), we give our date Typography component a new class and give it a flexGrow of 1 (remember, everything in our Layout component is in a div with flex display applied).
 
 This flexGrow has our date Typography component take up all the horizontal space that it can (our flex container being row/horizontal direction), pushing the next Typography component / with our placeholder user name to the far right side of the page.
+
+# Avatars
+
+The Material UI Avatar component supports image based, letter based (ex. initials) and icon based avatars.
+
+These avatars often represent a user or users (as with the AvatarGroup component which can nicely stack a few avatars, such as for a group of users in a message thread).
+
+They can also represent buttons or menu items.
+
+First, we add an Avatar component for our mock/hardcoded user (Mario) in the top right of the app. And we create a new css class for it to put some margin between the Avatar image and the user name ("Mario").
