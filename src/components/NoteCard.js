@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { IconButton, makeStyles } from '@material-ui/core';
 import { DeleteOutlined }  from '@material-ui/icons';
+import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles({
     test: {
@@ -23,6 +24,11 @@ export default function NoteCard({ note, handleDelete }) {
         <div>
             <Card elevation={3} className={classes.test}>
                 <CardHeader
+                avatar={
+                    <Avatar>
+                        {note.category[0].toUpperCase()}
+                    </Avatar>
+                }
                 action={
                     // <IconButton onClick={() => console.log('delete', note.title)}>
                     <IconButton onClick={() => handleDelete(note.id)}>

@@ -270,6 +270,9 @@ The Material UI Avatar component supports image based, letter based (ex. initial
 
 These avatars often represent a user or users (as with the AvatarGroup component which can nicely stack a few avatars, such as for a group of users in a message thread).
 
-They can also represent buttons or menu items.
+They can also represent buttons or menu items.  Avatars can also have "badges" which might represent a new message or notification for a user or part of the App (ex. a messages icon/avatar with a badge indicating a new message received).
 
 First, we add an Avatar component for our mock/hardcoded user (Mario) in the top right of the app. And we create a new css class for it to put some margin between the Avatar image and the user name ("Mario").
+
+Second, we utilize the Material UI Card component's suppoort for an "avatar" prop to add an avatar to each of our Note Cards. In this case, we utilize the avatar componenet's ability to use the fiter letter (as alternate to image or icon) of string by passing it the note category uppercased.
+
