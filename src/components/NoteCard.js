@@ -10,7 +10,7 @@ import { yellow, green, pink, blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
     avatar: {
-        backgroundColor: (note) => {
+        backgroundColor: (note) => { // Uses note prop passed into useStyles below to programatically determine background color based on note category.
             if (note.category === 'work') {
                 return yellow[700]
             }
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 });
 
 export default function NoteCard({ note, handleDelete }) {
-    const classes = useStyles(note);
+    const classes = useStyles(note); // Passes NoteCard note prop into useStyles so can be used for programatic styling per individual note.
 
     return (
         <div>

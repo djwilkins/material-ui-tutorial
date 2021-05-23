@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => {
         page: {
             background: '#f9f9f9',
             width: '100%',
-            padding: theme.spacing(3)
+            padding: theme.spacing(3) // Give 3x the theme's base spacing
         },
         drawer: {
             width: drawerWidth
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => {
             background: '#e6e6e6' // Apply an active style to the Sidebar (Drawer) navigation link of the page we're currently already on.
         },
         title: {
-            padding: theme.spacing(2)
+            padding: theme.spacing(2) // Give 2x the theme's base spacing
         },
         appbar: {
             background: '#ffffff',
